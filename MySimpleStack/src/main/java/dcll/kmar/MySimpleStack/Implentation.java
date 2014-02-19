@@ -11,6 +11,7 @@ public class Implentation implements SimpleStack{
 	
 	private final int TAILLE = 10;
 	public Implentation() {
+		//lol
 		liste = new Item[TAILLE];
 		nbElem = 0;
 	}
