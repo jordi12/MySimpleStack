@@ -5,46 +5,46 @@ import java.util.EmptyStackException;
 
 public class Implentation implements SimpleStack{
 
-	private Item [] liste;
-	
-	private int nbElem;
-	
-	private final int TAILLE = 10;
-	public Implentation() {
-		//lol
-		liste = new Item[TAILLE];
-		nbElem = 0;
-	}
+	ArrayList<Item> liste = new ArrayList<Item>();
 	
 	@Override
 	public boolean isEmpty() {
-		if(nbElem == TAILLE) {
-			return true;
-		}
-		return true;
+
+		return (liste.size() == 0);
 	}
 
 	@Override
 	public int getSize() {
-		return TAILLE;
+		return liste.size();
 	}
 
 	@Override
 	public void push(Item item) {
-		// TODO Auto-generated method stub
-		
+		liste.add(item);
 	}
 
 	@Override
 	public Item peek() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+	try {
+		return liste.get(getSize());
+			
+	} catch (EmptyStackException e) {
+		throw new EmptyStackException();
+		}
 	}
 
 	@Override
 	public Item pop() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if(liste.isEmpty())
+				{
+				return null;
+				}
+			return liste.remove(getSize());
+				
+		} catch (EmptyStackException e) {
+			throw new EmptyStackException();
+			}
 	}
 
 }
